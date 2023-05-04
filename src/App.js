@@ -1,4 +1,6 @@
 import Form from "./Form";
+import Table from "./Table";
+
 import { useState, useEffect } from "react";
 
 
@@ -16,7 +18,7 @@ function App() {
       try { 
         const response = await fetch(`${API_URL}${reqType}`)
         const data = await response.json()
-        console.log(data)
+        setItems(data)  
       }
       catch(err) {
         console.log(err)
@@ -32,7 +34,10 @@ function App() {
       <Form 
         reqType={reqType} 
         setReqType={setReqType}
-        />      
+        />
+      <Table 
+        items={items} 
+        />
     </div>
   );
 }
