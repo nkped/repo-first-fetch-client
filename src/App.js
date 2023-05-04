@@ -1,3 +1,4 @@
+import Form from "./Form";
 import { useState, useEffect } from "react";
 
 
@@ -27,7 +28,11 @@ function App() {
 
 
   return (
-    <div className="App">Hello
+    <div className="App">
+      <Form 
+        reqType={reqType} 
+        setReqType={setReqType}
+        />      
     </div>
   );
 }
